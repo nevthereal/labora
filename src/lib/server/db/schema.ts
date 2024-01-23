@@ -6,8 +6,7 @@ export const usersTable = sqliteTable('users', {
 	id: text('id', { length: 15 }).primaryKey().notNull(),
 	username: text('username', { length: 255 }).notNull().unique(),
 	email: text('email', { length: 255 }).notNull().unique(),
-	admin: integer('admin', { mode: 'boolean' }).default(false),
-	premium: integer('premium', { mode: 'boolean' }).default(false)
+	admin: integer('admin', { mode: 'boolean' }).default(false)
 });
 
 export const sessionsTable = sqliteTable('sessions', {
@@ -56,11 +55,12 @@ export const spacesTable = sqliteTable('spaces', {
 	title: text('title').notNull(),
 	creatorId: text('creator_id')
 		.references(() => usersTable.id)
-		.notNull()
+		.notNull(),
+	premium: int('premium', { mode: 'boolean' }).default(false)
 });
 
 export const spacesRelation = relations(spacesTable, ({ one, many }) => ({
-	user: one(usersTable, {
+	creator: one(usersTable, {
 		fields: [spacesTable.creatorId],
 		references: [usersTable.id]
 	}),
