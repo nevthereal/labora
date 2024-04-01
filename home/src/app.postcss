@@ -8,16 +8,16 @@
 	src: url('/fonts/Geist.ttf');
 }
 
+:root [data-theme='maniac'] {
+	--theme-font-family-heading: 'Geist', sans-serif;
+}
+
 html {
-	@apply scroll-smooth;
+	@apply scroll-smooth prose-headings:font-bold;
 }
 
 body {
 	@apply hide-scrollbar;
-}
-
-:root [data-theme='maniac'] {
-	--theme-font-family-heading: 'Geist', sans-serif;
 }
 
 .gradient-text {
@@ -25,5 +25,5 @@ body {
 }
 
 .bento-box {
-	@apply card p-12 flex flex-col gap-4;
+	@apply card flex flex-col gap-4 p-12;
 }
