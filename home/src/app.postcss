@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@font-face {
+	font-family: 'Geist';
+	src: url('/fonts/Geist.ttf');
+}
+
+html {
+	@apply scroll-smooth;
+}
+
+body {
+	@apply hide-scrollbar;
+}
+
+:root [data-theme='maniac'] {
+	--theme-font-family-heading: 'Geist', sans-serif;
+}
+
+.gradient-text {
+	@apply bg-gradient-to-br from-primary-400 to-tertiary-500 bg-clip-text text-transparent;
+}
+
+.bento-box {
+	@apply card p-12 flex flex-col gap-4;
+}
