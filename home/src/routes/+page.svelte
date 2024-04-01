@@ -15,7 +15,7 @@
 
 <div class="flex h-[90dvh] w-screen items-center justify-center text-center">
 	<div class="flex flex-col gap-4">
-		<h1 class="text-7xl font-black">Labora.</h1>
+		<h1 class="mb-8 text-7xl font-black">Labora.</h1>
 		<div class="group relative mx-auto">
 			<div
 				class={`absolute -left-24 top-12 z-10 flex gap-2 text-2xl font-bold opacity-0 duration-200 ease-in-out ${!completed ? 'md:group-hover:opacity-100' : ''}`}
@@ -26,7 +26,7 @@
 			</div>
 			<Todo
 				bind:completed
-				classes="relative"
+				classes={`relative shadow-lg ${!completed ? 'shadow-primary-500/50 hover:shadow-primary-500/20' : 'shadow-none'}  duration-200 ease-in-out`}
 				body={"Time to be <span class='gradient-text'>productive</span>"}
 			/>
 		</div>
