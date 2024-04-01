@@ -1,29 +1,34 @@
-<script lang="ts">
-	const tiers: PricingTier[] = [
-		{
-			name: 'Free',
-			price: 0,
-			spaces: 3
-		},
-		{
-			name: 'Premium',
-			price: 5,
-			spaces: 'Unlimited'
-		}
-	];
-</script>
-
-<main class="mx-auto my-16 grid max-w-[80%] grid-cols-2 justify-center gap-4">
-	{#each tiers as tier}
-		<div class="card p-12">
-			<h1 class="h1 font-bold">{tier.name}</h1>
-			<h4 class="h4 mt-2 text-surface-200">
-				{tier.price != 0 ? `${tier.price} CHF / month` : 'Free forever!'}
-			</h4>
-			<ul class="h5 mt-2">
-				<li><i class="fa-solid fa-cloud text-success-500"></i> Saved In Cloud</li>
-				<li><i class="fa-solid fa-inbox text-primary-500"></i> {tier.spaces} Spaces</li>
-			</ul>
-		</div>
-	{/each}
+<main class="mx-auto my-16 grid max-w-[80%] grid-cols-3 justify-center gap-4">
+	<div class="card p-12">
+		<h1 class="h1 font-bold">Free</h1>
+		<h4 class="h4 mt-2 text-surface-200">Free forever!</h4>
+		<ul class="h5 mt-2">
+			<li><i class="fa-regular fa-square-check"></i> Daily habits</li>
+			<li><i class="fa-solid fa-cloud text-success-500"></i> Saved In Cloud</li>
+			<li><i class="fa-solid fa-inbox text-primary-500"></i> 5 Spaces</li>
+			<li><i class="fa-solid fa-handshake"></i> 1 Team Space</li>
+		</ul>
+	</div>
+	<div class="card p-12">
+		<h1 class="h1 font-bold">Premium</h1>
+		<h4 class="h4 mt-2 text-surface-200">$8/month</h4>
+		<ul class="h5 mt-2">
+			<li><i class="fa-regular fa-square-check"></i> Daily habits</li>
+			<li><i class="fa-solid fa-cloud text-success-500"></i> Saved In Cloud</li>
+			<li><i class="fa-solid fa-inbox text-primary-500"></i> 50 Spaces</li>
+			<li><i class="fa-solid fa-handshake"></i> 5 Team Spaces</li>
+			<li><i class="fa-solid fa-brain text-amber-500"></i> Exclusive AI features</li>
+		</ul>
+	</div>
+	<div class="card p-12">
+		<h1 class="h1 font-bold">Gold</h1>
+		<h4 class="h4 mt-2 text-surface-200">$20/month</h4>
+		<ul class="h5 mt-2">
+			<li><i class="fa-regular fa-square-check"></i> Daily habits</li>
+			<li><i class="fa-solid fa-cloud text-success-500"></i> Saved In Cloud</li>
+			<li><i class="fa-solid fa-inbox text-primary-500"></i> Unlimited Spaces</li>
+			<li><i class="fa-solid fa-handshake"></i> 10 Team Spaces</li>
+			<li><i class="fa-solid fa-brain text-amber-500"></i> Exclusive AI features</li>
+		</ul>
+	</div>
 </main>

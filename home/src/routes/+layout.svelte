@@ -53,8 +53,8 @@
 		<nav class="flex justify-between p-4">
 			<a href="/" class="h1 btn font-bold italic">logo</a>
 			<div class="my-auto flex gap-8 font-semibold">
-				<a class="h5 btn" href="/pricing">Pricing</a>
-				<a class="h5 btn" href="/features">Features</a>
+				<a class="btn-xl" href="/pricing">Pricing</a>
+				<a class="btn-xl" href="/features">Features</a>
 			</div>
 			<a href="https://app.taskforge.com" class="variant-ghost-primary btn my-auto font-bold"
 				>Dashboard</a
@@ -87,7 +87,7 @@
 					</ul>
 				</div>
 				<div>
-					<h4 class="h4 font-semibold">Developer</h4>
+					<h4 class="h4 font-semibold">Development</h4>
 					<ul>
 						<li class="text-surface-200">
 							<a target="_blank" href="https://github.com/nevthereal/labora">Open Source</a>

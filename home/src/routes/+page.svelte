@@ -66,7 +66,7 @@
 					<Todo body="Removes all distractions" completed={true} />
 					<Todo body="Keeps you organized" completed={true} />
 					<Todo body="Keeps you focused" completed={true} />
-					<Todo body="Bloats you with unneeded features" />
+					<Todo body="Bloats you with unneeded features (update)" />
 				</ul>
 			</div>
 		</div>
@@ -123,7 +123,7 @@
 				</p>
 			</div>
 			<div class="bento-box col-span-2">
-				<h1 class="gradient-text h1 m-auto font-black">Get it done</h1>
+				<h1 class="gradient-text h1 m-auto font-black">Get it done quickly</h1>
 				<p class="m-auto text-lg">
 					For a quick entry just press <kbd class="kbd">ctrl + E</kbd>
 				</p>
@@ -138,11 +138,11 @@
 			</h2>
 			<div class="flex flex-col gap-4">
 				<div>
-					<label for="email">Email</label>
+					<label for="email" class="mb-2">Email</label>
 					<input type="email" name="email" class="input" />
 				</div>
 				<div>
-					<label for="how">How did you hear from us?</label>
+					<label for="how" class="mb-2">How did you hear from us?</label>
 					<select name="how" class="select">
 						<option value="yt">YouTube</option>
 						<option value="x">X (Twitter)</option>
