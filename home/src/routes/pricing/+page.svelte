@@ -10,7 +10,7 @@
 		</ul>
 	</div>
 	<div class="card p-12">
-		<h1 class="h1 font-bold">Premium</h1>
+		<h1 class="h1 font-bold">Grinder</h1>
 		<h4 class="h4 mt-2 text-surface-200">$8/month</h4>
 		<ul class="h5 mt-2">
 			<li><i class="fa-regular fa-square-check"></i> Daily habits</li>
@@ -21,7 +21,7 @@
 		</ul>
 	</div>
 	<div class="card p-12">
-		<h1 class="h1 font-bold">Gold</h1>
+		<h1 class="h1 font-bold">Maniac</h1>
 		<h4 class="h4 mt-2 text-surface-200">$20/month</h4>
 		<ul class="h5 mt-2">
 			<li><i class="fa-regular fa-square-check"></i> Daily habits</li>

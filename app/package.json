@@ -45,6 +45,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@floating-ui/dom": "1.6.3"
+    "@floating-ui/dom": "1.6.3",
+    "dayjs": "^1.11.10"
   }
 }
