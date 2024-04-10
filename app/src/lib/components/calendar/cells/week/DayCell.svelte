@@ -7,9 +7,7 @@
 	export let index: number;
 	export let currentMonth: number;
 
-	const today = dayjs();
-
-	$: manipulatedDate = $date.add(index - today.day() + 1, 'days');
+	$: manipulatedDate = $date.add(index - dayjs().day() + 1, 'days');
 </script>
 
 <div>
@@ -22,7 +20,7 @@
 	>
 		<span class="font-bold text-xl">{weekDay}</span>
 		<span
-			class={`font-medium size-8  flex justify-center items-center rounded-full ${manipulatedDate.toDate().toString() === today.toDate().toString() && 'bg-primary-500 text-white'}`}
+			class={`font-medium size-8  flex justify-center items-center rounded-full ${dayjs().toDate().toString() === manipulatedDate.toDate().toString() && 'bg-primary-500 text-white'}`}
 			>{manipulatedDate.date()}</span
 		>
 	</div>

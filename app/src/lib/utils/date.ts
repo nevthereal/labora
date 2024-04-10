@@ -21,10 +21,10 @@ export const weekDays = [
 	{ short: 'M', long: 'Mon' },
 	{ short: 'T', long: 'Tue' },
 	{ short: 'W', long: 'Wed' },
-	{ short: 'Th', long: 'Thu' },
+	{ short: 'T', long: 'Thu' },
 	{ short: 'F', long: 'Fri' },
-	{ short: 'Sa', long: 'Sat' },
-	{ short: 'Su', long: 'Sun' }
+	{ short: 'S', long: 'Sat' },
+	{ short: 'S', long: 'Sun' }
 ];
 
 export const months = [

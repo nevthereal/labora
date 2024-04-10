@@ -4,7 +4,7 @@
 	import { cn } from '$lib/utils/merge';
 </script>
 
-<section class={cn('size-[500px]', classNames)}>
+<section class={cn(classNames)}>
 	<div class="flex gap-4 justify-between">
 		<h1 class="text-3xl mb-4 select-none">
 			<span class="font-bold">
