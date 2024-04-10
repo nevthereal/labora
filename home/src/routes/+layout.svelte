@@ -56,7 +56,7 @@
 				<a class="btn-xl" href="/pricing">Pricing</a>
 				<a class="btn-xl" href="/features">Features</a>
 			</div>
-			<a href="https://app.taskforge.com" class="variant-ghost-primary btn my-auto font-bold"
+			<a href="https://app.labora.com" class="variant-ghost-primary btn my-auto font-bold"
 				>Dashboard</a
 			>
 		</nav>
