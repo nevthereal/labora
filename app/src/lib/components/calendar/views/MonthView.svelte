@@ -1,8 +1,8 @@
 <script lang="ts">
-	import dayjs from 'dayjs';
-
 	export let classNames: string = '';
+	import { date, offset, setOffset } from '$lib/utils/date';
 
+	const weekDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 	const months = [
 		'January',
 		'February',
@@ -18,27 +18,17 @@
 		'December'
 	];
 
-	const date = dayjs();
-
-	let offset = 0;
-
-	const setOffset = (newOffset: number) => {
-		if (newOffset === 0) {
-			offset = 0;
-		}
-		offset += newOffset;
-	};
-	$: currentMonth = date.add(offset, 'month').month();
+	$: currentMonth = $date.add($offset, 'week').month();
 </script>
 
-<section class={classNames}>
-	<div class="w-full flex justify-between">
+<section class={`size-[500px] ${classNames}`}>
+	<div class="flex gap-4 justify-between">
 		<h1 class="text-3xl mb-4">
 			<span class="font-bold">
 				{months[currentMonth]}
 			</span>
 			<span class="font-medium">
-				{date.add(offset * 7, 'day').year()}
+				{$date.add($offset * 7, 'day').year()}
 			</span>
 		</h1>
 		<div class="flex gap-2">
@@ -77,6 +67,10 @@
 		</div>
 	</div>
 	<div class="flex">
-		<div class="w-full grid grid-cols-7 grid-rows-5"></div>
+		<div class="grid grid-cols-7 grid-rows-7 gap-4 text-center">
+			{#each weekDays as day}
+				<span>{day}</span>
+			{/each}
+		</div>
 	</div>
 </section>

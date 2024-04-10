@@ -3,5 +3,7 @@
 	import WeekView from '$lib/components/calendar/views/WeekView.svelte';
 </script>
 
-<!-- <WeekView /> -->
-<MonthView />
+<main class="flex justify-center items-center w-screen h-screen">
+	<!-- <WeekView /> -->
+	<MonthView classNames="card p-6" />
+</main>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import DayCell from '../cells/week/DayCell.svelte';
-	import dayjs from 'dayjs';
+	import { date, offset, setOffset } from '$lib/utils/date';
 
 	export let classNames: string = '';
 
@@ -20,17 +20,7 @@
 		'December'
 	];
 
-	const date = dayjs();
-
-	let offset = 0;
-
-	const setOffset = (newOffset: number) => {
-		if (newOffset === 0) {
-			offset = 0;
-		}
-		offset += newOffset;
-	};
-	$: currentMonth = date.add(offset * 7, 'day').month();
+	$: currentMonth = $date.add($offset, 'week').month();
 </script>
 
 <section class={classNames}>
@@ -40,7 +30,7 @@
 				{months[currentMonth]}
 			</span>
 			<span class="font-medium">
-				{date.add(offset * 7, 'day').year()}
+				{$date.add($offset * 7, 'day').year()}
 			</span>
 		</h1>
 		<div class="flex gap-2">
@@ -81,7 +71,7 @@
 	<div class="flex">
 		<div class="w-full grid grid-cols-7">
 			{#each weekDays as weekDay, idx}
-				<DayCell {currentMonth} {offset} {weekDay} index={idx} {date} />
+				<DayCell {currentMonth} offset={$offset} {weekDay} index={idx} date={$date} />
 			{/each}
 		</div>
 	</div>
