@@ -1,6 +1,7 @@
 <script lang="ts">
 	import DayCell from '../cells/week/DayCell.svelte';
 	import { date, offset, setOffset } from '$lib/utils/date';
+	import { cn } from '$lib/utils/merge';
 
 	export let classNames: string = '';
 
@@ -20,58 +21,42 @@
 		'December'
 	];
 
-	$: currentMonth = $date.add($offset, 'week').month();
+	$: manipulatedDate = $date.add($offset, 'week');
 </script>
 
-<section class={classNames}>
+<section class={cn('', classNames)}>
 	<div class="w-full flex justify-between">
-		<h1 class="text-3xl mb-4">
+		<h1 class="text-3xl mb-4 select-none">
 			<span class="font-bold">
-				{months[currentMonth]}
+				{months[manipulatedDate.month()]}
 			</span>
 			<span class="font-medium">
-				{$date.add($offset * 7, 'day').year()}
+				{manipulatedDate.year()}
 			</span>
 		</h1>
 		<div class="flex gap-2">
 			<button class="active:scale-95 duration-200 ease-in-out" on:click={() => setOffset(-1)}>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					class="w-6 h-6"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
-						clip-rule="evenodd"
-					/>
-				</svg>
+				<i class="fa-solid fa-chevron-left"></i>
 			</button>
 			<button
 				class="active:scale-95 duration-200 ease-in-out font-semibold select-none"
 				on:click={() => setOffset(0)}>Today</button
 			>
 			<button class="active:scale-95 duration-200 ease-in-out" on:click={() => setOffset(1)}>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					class="w-6 h-6"
-				>
-					<path
-						fill-rule="evenodd"
-						d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-						clip-rule="evenodd"
-					/>
-				</svg>
+				<i class="fa-solid fa-chevron-right"></i>
 			</button>
 		</div>
 	</div>
 	<div class="flex">
 		<div class="w-full grid grid-cols-7">
 			{#each weekDays as weekDay, idx}
-				<DayCell {currentMonth} offset={$offset} {weekDay} index={idx} date={$date} />
+				<DayCell
+					currentMonth={manipulatedDate.month()}
+					offset={$offset}
+					{weekDay}
+					index={idx}
+					date={$date}
+				/>
 			{/each}
 		</div>
 	</div>

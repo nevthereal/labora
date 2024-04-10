@@ -4,6 +4,6 @@
 </script>
 
 <main class="flex justify-center items-center w-screen h-screen">
-	<!-- <WeekView /> -->
+	<WeekView classNames="card p-6" />
 	<MonthView classNames="card p-6" />
 </main>
