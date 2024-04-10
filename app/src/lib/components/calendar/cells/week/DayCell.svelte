@@ -1,28 +1,28 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/merge';
-	import type { Dayjs } from 'dayjs';
+	import { date } from '$lib/utils/date';
+	import dayjs from 'dayjs';
 
 	export let weekDay: string;
-	export let date: Dayjs;
 	export let index: number;
-	export let offset: number;
 	export let currentMonth: number;
 
-	const todayNum = date.day();
-	$: manipulatedDate = date.add(index - todayNum + 1 + offset * 7, 'day');
+	const today = dayjs();
+
+	$: manipulatedDate = $date.add(index - today.day() + 1, 'days');
 </script>
 
 <div>
 	<div
 		class={cn(
 			'p-4 flex gap-4 items-center justify-between select-none',
-			index != 0 && 'border-l border-surface-500',
-			manipulatedDate.month() != currentMonth && 'text-surface-200'
+			$date.month() != currentMonth && 'text-surface-200',
+			index != 0 && 'border-l border-surface-500'
 		)}
 	>
 		<span class="font-bold text-xl">{weekDay}</span>
 		<span
-			class={`font-medium size-8  flex justify-center items-center rounded-full ${manipulatedDate.toDate().toString() === date.toDate().toString() && 'bg-primary-500 text-white'}`}
+			class={`font-medium size-8  flex justify-center items-center rounded-full ${manipulatedDate.toDate().toString() === today.toDate().toString() && 'bg-primary-500 text-white'}`}
 			>{manipulatedDate.date()}</span
 		>
 	</div>

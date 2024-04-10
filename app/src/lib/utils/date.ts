@@ -3,11 +3,41 @@ import { writable } from 'svelte/store';
 
 export const date = writable<Dayjs>(dayjs());
 
-export const offset = writable<number>(0);
-
-export const setOffset = (newOffset: number) => {
-	if (newOffset === 0) {
-		offset.set(0);
+export const setOffset = (operation: 'add' | 'subtract' | 'reset', unit?: 'month' | 'week') => {
+	if (operation === 'add') {
+		date.update((date) => {
+			return date.add(1, unit);
+		});
+	} else if (operation === 'subtract') {
+		date.update((date) => {
+			return date.subtract(1, unit);
+		});
+	} else if (operation === 'reset') {
+		date.set(dayjs());
 	}
-	offset.update((o) => (o += newOffset));
 };
+
+export const weekDays = [
+	{ short: 'M', long: 'Mon' },
+	{ short: 'T', long: 'Tue' },
+	{ short: 'W', long: 'Wed' },
+	{ short: 'Th', long: 'Thu' },
+	{ short: 'F', long: 'Fri' },
+	{ short: 'Sa', long: 'Sat' },
+	{ short: 'Su', long: 'Sun' }
+];
+
+export const months = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December'
+];

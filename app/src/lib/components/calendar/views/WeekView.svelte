@@ -1,48 +1,36 @@
 <script lang="ts">
 	import DayCell from '../cells/week/DayCell.svelte';
-	import { date, offset, setOffset } from '$lib/utils/date';
+	import { date, months, setOffset, weekDays } from '$lib/utils/date';
 	import { cn } from '$lib/utils/merge';
 
 	export let classNames: string = '';
-
-	const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-	const months = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December'
-	];
-
-	$: manipulatedDate = $date.add($offset, 'week');
 </script>
 
 <section class={cn('', classNames)}>
 	<div class="w-full flex justify-between">
 		<h1 class="text-3xl mb-4 select-none">
 			<span class="font-bold">
-				{months[manipulatedDate.month()]}
+				{months[$date.month()]}
 			</span>
 			<span class="font-medium">
-				{manipulatedDate.year()}
+				{$date.year()}
 			</span>
 		</h1>
 		<div class="flex gap-2">
-			<button class="active:scale-95 duration-200 ease-in-out" on:click={() => setOffset(-1)}>
+			<button
+				class="active:scale-95 duration-200 ease-in-out"
+				on:click={() => setOffset('subtract', 'week')}
+			>
 				<i class="fa-solid fa-chevron-left"></i>
 			</button>
 			<button
 				class="active:scale-95 duration-200 ease-in-out font-semibold select-none"
-				on:click={() => setOffset(0)}>Today</button
+				on:click={() => setOffset('reset')}>Today</button
 			>
-			<button class="active:scale-95 duration-200 ease-in-out" on:click={() => setOffset(1)}>
+			<button
+				class="active:scale-95 duration-200 ease-in-out"
+				on:click={() => setOffset('add', 'week')}
+			>
 				<i class="fa-solid fa-chevron-right"></i>
 			</button>
 		</div>
@@ -50,13 +38,7 @@
 	<div class="flex">
 		<div class="w-full grid grid-cols-7">
 			{#each weekDays as weekDay, idx}
-				<DayCell
-					currentMonth={manipulatedDate.month()}
-					offset={$offset}
-					{weekDay}
-					index={idx}
-					date={$date}
-				/>
+				<DayCell currentMonth={$date.month()} weekDay={weekDay.long} index={idx} />
 			{/each}
 		</div>
 	</div>
