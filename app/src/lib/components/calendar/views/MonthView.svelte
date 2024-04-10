@@ -1,7 +1,6 @@
 <script lang="ts">
 	export let classNames: string = '';
-	import { date, months, setOffset, weekDays } from '$lib/utils/date';
-	import { cn } from '$lib/utils/merge';
+	import { date, months, setOffset, weekDays, cn } from '$lib/utils';
 </script>
 
 <section class={cn(classNames)}>

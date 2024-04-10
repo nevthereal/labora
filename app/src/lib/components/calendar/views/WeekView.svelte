@@ -1,7 +1,6 @@
 <script lang="ts">
 	import DayCell from '../cells/week/DayCell.svelte';
-	import { date, months, setOffset, weekDays } from '$lib/utils/date';
-	import { cn } from '$lib/utils/merge';
+	import { date, months, setOffset, weekDays, cn } from '$lib/utils';
 
 	export let classNames: string = '';
 </script>

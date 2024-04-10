@@ -1,5 +1,7 @@
 import dayjs, { type Dayjs } from 'dayjs';
 import { writable } from 'svelte/store';
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export const date = writable<Dayjs>(dayjs());
 
@@ -15,6 +17,10 @@ export const setOffset = (operation: 'add' | 'subtract' | 'reset', unit?: 'month
 	} else if (operation === 'reset') {
 		date.set(dayjs());
 	}
+};
+
+export const cn = (...inputs: ClassValue[]) => {
+	return twMerge(clsx(inputs));
 };
 
 export const weekDays = [

@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils/merge';
-	import { date } from '$lib/utils/date';
+	import { date, cn } from '$lib/utils';
 	import dayjs from 'dayjs';
 
 	export let weekDay: string;
