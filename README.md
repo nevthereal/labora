@@ -1,8 +1,8 @@
-# laborium
+# labora
 
 ## About this repo
 
-This is my soon-in-prod fullstack application for efficiently and productively manage your tasks. The App will be structured into different Spaces which all have different tasks in them. This project will possibly be monetized in the future to gain access to premium features.
+This is my fullstack application for efficiently and productively manage your tasks. The App will be structured into different Spaces which all have different tasks in them. This project will possibly be monetized in the future to gain access to premium features.
 
 ## Tech used
 
