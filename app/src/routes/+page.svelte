@@ -1,7 +1,11 @@
 <script lang="ts">
 	import MonthView from '$lib/components/calendar/views/MonthView.svelte';
 	import WeekView from '$lib/components/calendar/views/WeekView.svelte';
+	import type { PageServerData } from './$types';
 
+	export let data: PageServerData;
+
+	const tasks = data.tasks;
 	let week = true;
 </script>
 
@@ -20,7 +24,7 @@
 > -->
 
 {#if week}
-	<WeekView classNames="card p-8 mt-4" />
+	<WeekView {tasks} classNames="card p-8 mt-4" />
 {:else}
 	<MonthView classNames="card p-8 mt-4" />
 {/if}
