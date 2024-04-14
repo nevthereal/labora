@@ -6,7 +6,7 @@
 </script>
 
 <h1 class="h1">Welcome to the dashboard</h1>
-
+<!-- 
 <button
 	class="btn variant-ghost-surface mt-8"
 	on:click={() => {
@@ -17,7 +17,7 @@
 	{:else}
 		Week
 	{/if}</button
->
+> -->
 
 {#if week}
 	<WeekView classNames="card p-8 mt-4" />
