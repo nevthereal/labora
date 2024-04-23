@@ -7,10 +7,11 @@
 
 	const tasks = data.tasks;
 	let week = true;
+	console.log(tasks);
 </script>
 
-<h1 class="h1">Welcome to the dashboard</h1>
-<!-- 
+<h1 class="h1 font-bold">Welcome to the dashboard</h1>
+
 <button
 	class="btn variant-ghost-surface mt-8"
 	on:click={() => {
@@ -21,7 +22,7 @@
 	{:else}
 		Week
 	{/if}</button
-> -->
+>
 
 {#if week}
 	<WeekView {tasks} classNames="card p-8 mt-4" />
