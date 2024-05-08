@@ -2,8 +2,6 @@
   import DayCell from '../cells/week/DayCell.svelte';
   import { date, months, setOffset, weekDays, cn } from '../../../utils';
 
-  export let tasks;
-
   export let classNames: string = '';
 </script>
 
