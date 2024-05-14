@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { MonthView } from '@repo/ui';
 	import { WeekView } from '@repo/ui';
-	import { register } from '@tauri-apps/api/globalShortcut';
 
 	let week = true;
 </script>
